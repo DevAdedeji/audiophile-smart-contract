@@ -40,6 +40,6 @@ contract Audiophile {
     }
 
     function getBalance() public view returns (uint256) {
-        return address(this).balance / 1e18;
+        return address(this).balance;
     }
 }

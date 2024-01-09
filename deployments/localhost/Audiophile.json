@@ -1,0 +1,181 @@
+{
+  "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "priceFeedAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "Withdraw_NotSuccessful",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "productId",
+          "type": "uint256"
+        }
+      ],
+      "name": "fund",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPriceFeed",
+      "outputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "productId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getProductBuyers",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "sendTo",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xe107b78930aa7a5a6e29017fe6ddfb352c7b60e3e6bd4332ac3414a44666433f",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "transactionIndex": 0,
+    "gasUsed": "414438",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x92997d6d9121aa91fa51780f2dfab554c90e9cd3daacf2a5197098144d53ba12",
+    "transactionHash": "0xe107b78930aa7a5a6e29017fe6ddfb352c7b60e3e6bd4332ac3414a44666433f",
+    "logs": [],
+    "blockNumber": 2,
+    "cumulativeGasUsed": "414438",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "d841f8a30b432baaa26bb801a5569dbf",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"priceFeedAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"Withdraw_NotSuccessful\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"productId\",\"type\":\"uint256\"}],\"name\":\"fund\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPriceFeed\",\"outputs\":[{\"internalType\":\"contract AggregatorV3Interface\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"productId\",\"type\":\"uint256\"}],\"name\":\"getProductBuyers\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"sendTo\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Audiophile.sol\":\"Audiophile\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ninterface AggregatorV3Interface {\\n  function decimals() external view returns (uint8);\\n\\n  function description() external view returns (string memory);\\n\\n  function version() external view returns (uint256);\\n\\n  function getRoundData(\\n    uint80 _roundId\\n  ) external view returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\\n\\n  function latestRoundData()\\n    external\\n    view\\n    returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\\n}\\n\",\"keccak256\":\"0xfe4e8bb4861bb3860ba890ab91a3b818ec66e5a8f544fb608cfcb73f433472cd\",\"license\":\"MIT\"},\"contracts/Audiophile.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.19;\\r\\n\\r\\nimport \\\"./PriceConverter.sol\\\";\\r\\n\\r\\nerror Withdraw_NotSuccessful();\\r\\n\\r\\ncontract Audiophile {\\r\\n    using PriceConverter for uint256;\\r\\n\\r\\n    // Products and its buyers\\r\\n    mapping(uint256 => address[]) private productBoughtBy;\\r\\n    AggregatorV3Interface private s_priceFeed;\\r\\n\\r\\n    constructor(address priceFeedAddress) {\\r\\n        s_priceFeed = AggregatorV3Interface(priceFeedAddress);\\r\\n    }\\r\\n\\r\\n    // Fund function\\r\\n    function fund(uint256 productId) public payable {\\r\\n        productBoughtBy[productId].push(msg.sender);\\r\\n    }\\r\\n\\r\\n    // A function to send eth to an address\\r\\n    function sendTo(uint256 amount, address receiver) public payable {\\r\\n        (bool callSucess, ) = payable(receiver).call{value: amount}(\\\"\\\");\\r\\n        if (!callSucess) {\\r\\n            revert Withdraw_NotSuccessful();\\r\\n        }\\r\\n    }\\r\\n\\r\\n    function getProductBuyers(\\r\\n        uint256 productId\\r\\n    ) public view returns (address[] memory) {\\r\\n        return productBoughtBy[productId];\\r\\n    }\\r\\n\\r\\n    function getPriceFeed() public view returns (AggregatorV3Interface) {\\r\\n        return s_priceFeed;\\r\\n    }\\r\\n\\r\\n    function getBalance() public view returns (uint256) {\\r\\n        return address(this).balance;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x32a13b133f9e5d61212eba354fe5475a9e6ca35a259c18d89b18286797ea5c68\",\"license\":\"MIT\"},\"contracts/PriceConverter.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.19;\\r\\n\\r\\nimport \\\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\\\";\\r\\n\\r\\nlibrary PriceConverter {\\r\\n    function getPrice(\\r\\n        AggregatorV3Interface priceFeed\\r\\n    ) internal view returns (uint256) {\\r\\n        (, int256 price, , , ) = priceFeed.latestRoundData();\\r\\n        return uint256(price * 1e10);\\r\\n    }\\r\\n\\r\\n    function getConversionRate(\\r\\n        uint256 amountInUSD,\\r\\n        AggregatorV3Interface priceFeed\\r\\n    ) internal view returns (uint256) {\\r\\n        uint256 ethPrice = getPrice(priceFeed);\\r\\n        uint256 ethAmount = (amountInUSD * 1e18) / ethPrice;\\r\\n        return ethAmount;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x65dcded9a1e36b98f9f7234fd5796b4be4157392fabd6d08f93bb8cc99b6eafe\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610728380380610728833981810160405281019061003291906100dc565b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050610109565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006100a98261007e565b9050919050565b6100b98161009e565b81146100c457600080fd5b50565b6000815190506100d6816100b0565b92915050565b6000602082840312156100f2576100f1610079565b5b6000610100848285016100c7565b91505092915050565b610610806101186000396000f3fe60806040526004361061004a5760003560e01c80630fb9398f1461004f57806312065fe01461008c5780639e87a5cd146100b7578063b3d05678146100e2578063ca1d209d146100fe575b600080fd5b34801561005b57600080fd5b5061007660048036038101906100719190610345565b61011a565b6040516100839190610462565b60405180910390f35b34801561009857600080fd5b506100a16101ba565b6040516100ae9190610493565b60405180910390f35b3480156100c357600080fd5b506100cc6101c2565b6040516100d9919061050d565b60405180910390f35b6100fc60048036038101906100f79190610554565b6101ec565b005b61011860048036038101906101139190610345565b610294565b005b60606000808381526020019081526020016000208054806020026020016040519081016040528092919081815260200182805480156101ae57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610164575b50505050509050919050565b600047905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008173ffffffffffffffffffffffffffffffffffffffff1683604051610212906105c5565b60006040518083038185875af1925050503d806000811461024f576040519150601f19603f3d011682016040523d82523d6000602084013e610254565b606091505b505090508061028f576040517f1dce298d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b505050565b600080828152602001908152602001600020339080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600080fd5b6000819050919050565b6103228161030f565b811461032d57600080fd5b50565b60008135905061033f81610319565b92915050565b60006020828403121561035b5761035a61030a565b5b600061036984828501610330565b91505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006103c98261039e565b9050919050565b6103d9816103be565b82525050565b60006103eb83836103d0565b60208301905092915050565b6000602082019050919050565b600061040f82610372565b610419818561037d565b93506104248361038e565b8060005b8381101561045557815161043c88826103df565b9750610447836103f7565b925050600181019050610428565b5085935050505092915050565b6000602082019050818103600083015261047c8184610404565b905092915050565b61048d8161030f565b82525050565b60006020820190506104a86000830184610484565b92915050565b6000819050919050565b60006104d36104ce6104c98461039e565b6104ae565b61039e565b9050919050565b60006104e5826104b8565b9050919050565b60006104f7826104da565b9050919050565b610507816104ec565b82525050565b600060208201905061052260008301846104fe565b92915050565b610531816103be565b811461053c57600080fd5b50565b60008135905061054e81610528565b92915050565b6000806040838503121561056b5761056a61030a565b5b600061057985828601610330565b925050602061058a8582860161053f565b9150509250929050565b600081905092915050565b50565b60006105af600083610594565b91506105ba8261059f565b600082019050919050565b60006105d0826105a2565b915081905091905056fea2646970667358221220dfcad8d92998f4664184dee9a04efd0c3d0a1cec012e26f5cdb6e1476c303e4d64736f6c63430008130033",
+  "deployedBytecode": "0x60806040526004361061004a5760003560e01c80630fb9398f1461004f57806312065fe01461008c5780639e87a5cd146100b7578063b3d05678146100e2578063ca1d209d146100fe575b600080fd5b34801561005b57600080fd5b5061007660048036038101906100719190610345565b61011a565b6040516100839190610462565b60405180910390f35b34801561009857600080fd5b506100a16101ba565b6040516100ae9190610493565b60405180910390f35b3480156100c357600080fd5b506100cc6101c2565b6040516100d9919061050d565b60405180910390f35b6100fc60048036038101906100f79190610554565b6101ec565b005b61011860048036038101906101139190610345565b610294565b005b60606000808381526020019081526020016000208054806020026020016040519081016040528092919081815260200182805480156101ae57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610164575b50505050509050919050565b600047905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008173ffffffffffffffffffffffffffffffffffffffff1683604051610212906105c5565b60006040518083038185875af1925050503d806000811461024f576040519150601f19603f3d011682016040523d82523d6000602084013e610254565b606091505b505090508061028f576040517f1dce298d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b505050565b600080828152602001908152602001600020339080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600080fd5b6000819050919050565b6103228161030f565b811461032d57600080fd5b50565b60008135905061033f81610319565b92915050565b60006020828403121561035b5761035a61030a565b5b600061036984828501610330565b91505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006103c98261039e565b9050919050565b6103d9816103be565b82525050565b60006103eb83836103d0565b60208301905092915050565b6000602082019050919050565b600061040f82610372565b610419818561037d565b93506104248361038e565b8060005b8381101561045557815161043c88826103df565b9750610447836103f7565b925050600181019050610428565b5085935050505092915050565b6000602082019050818103600083015261047c8184610404565b905092915050565b61048d8161030f565b82525050565b60006020820190506104a86000830184610484565b92915050565b6000819050919050565b60006104d36104ce6104c98461039e565b6104ae565b61039e565b9050919050565b60006104e5826104b8565b9050919050565b60006104f7826104da565b9050919050565b610507816104ec565b82525050565b600060208201905061052260008301846104fe565b92915050565b610531816103be565b811461053c57600080fd5b50565b60008135905061054e81610528565b92915050565b6000806040838503121561056b5761056a61030a565b5b600061057985828601610330565b925050602061058a8582860161053f565b9150509250929050565b600081905092915050565b50565b60006105af600083610594565b91506105ba8261059f565b600082019050919050565b60006105d0826105a2565b915081905091905056fea2646970667358221220dfcad8d92998f4664184dee9a04efd0c3d0a1cec012e26f5cdb6e1476c303e4d64736f6c63430008130033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 58,
+        "contract": "contracts/Audiophile.sol:Audiophile",
+        "label": "productBoughtBy",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_uint256,t_array(t_address)dyn_storage)"
+      },
+      {
+        "astId": 61,
+        "contract": "contracts/Audiophile.sol:Audiophile",
+        "label": "s_priceFeed",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_contract(AggregatorV3Interface)45"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_contract(AggregatorV3Interface)45": {
+        "encoding": "inplace",
+        "label": "contract AggregatorV3Interface",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_uint256,t_array(t_address)dyn_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => address[])",
+        "numberOfBytes": "32",
+        "value": "t_array(t_address)dyn_storage"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

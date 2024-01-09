@@ -1,0 +1,41 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface AggregatorV3Interface {\n  function decimals() external view returns (uint8);\n\n  function description() external view returns (string memory);\n\n  function version() external view returns (uint256);\n\n  function getRoundData(\n    uint80 _roundId\n  ) external view returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\n\n  function latestRoundData()\n    external\n    view\n    returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\n}\n"
+    },
+    "contracts/Audiophile.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\nimport \"./PriceConverter.sol\";\r\n\r\nerror Withdraw_NotSuccessful();\r\n\r\ncontract Audiophile {\r\n    using PriceConverter for uint256;\r\n\r\n    // Products and its buyers\r\n    mapping(uint256 => address[]) private productBoughtBy;\r\n    AggregatorV3Interface private s_priceFeed;\r\n\r\n    constructor(address priceFeedAddress) {\r\n        s_priceFeed = AggregatorV3Interface(priceFeedAddress);\r\n    }\r\n\r\n    // Fund function\r\n    function fund(uint256 productId) public payable {\r\n        productBoughtBy[productId].push(msg.sender);\r\n    }\r\n\r\n    // A function to send eth to an address\r\n    function sendTo(uint256 amount, address receiver) public payable {\r\n        (bool callSucess, ) = payable(receiver).call{value: amount}(\"\");\r\n        if (!callSucess) {\r\n            revert Withdraw_NotSuccessful();\r\n        }\r\n    }\r\n\r\n    function getProductBuyers(\r\n        uint256 productId\r\n    ) public view returns (address[] memory) {\r\n        return productBoughtBy[productId];\r\n    }\r\n\r\n    function getPriceFeed() public view returns (AggregatorV3Interface) {\r\n        return s_priceFeed;\r\n    }\r\n\r\n    function getBalance() public view returns (uint256) {\r\n        return address(this).balance / 1e18;\r\n    }\r\n}\r\n"
+    },
+    "contracts/PriceConverter.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\nimport \"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\";\r\n\r\nlibrary PriceConverter {\r\n    function getPrice(\r\n        AggregatorV3Interface priceFeed\r\n    ) internal view returns (uint256) {\r\n        (, int256 price, , , ) = priceFeed.latestRoundData();\r\n        return uint256(price * 1e10);\r\n    }\r\n\r\n    function getConversionRate(\r\n        uint256 amountInUSD,\r\n        AggregatorV3Interface priceFeed\r\n    ) internal view returns (uint256) {\r\n        uint256 ethPrice = getPrice(priceFeed);\r\n        uint256 ethAmount = (amountInUSD * 1e18) / ethPrice;\r\n        return ethAmount;\r\n    }\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

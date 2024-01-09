@@ -30,7 +30,7 @@ module.exports = async({deployments, getNamedAccounts})=>{
     })
 
     if(!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY){
-        await verify(Audiophile.address, [])
+        await verify(Audiophile.address, args)
     }
 
     log("______________________________________________")
