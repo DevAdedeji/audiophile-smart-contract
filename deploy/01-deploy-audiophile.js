@@ -20,7 +20,7 @@ module.exports = async({deployments, getNamedAccounts})=>{
         priceFeedAddress = networkConfig[chainId]["ethUSDPriceFeed"]
     }
 
-    args = [priceFeedAddress]
+    args = [priceFeedAddress, deployer]
 
     const Audiophile = await deploy("Audiophile", {
         from: deployer,

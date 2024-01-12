@@ -8,7 +8,9 @@
     "test:staging": "npx hardhat test --network sepolia",
     "lint": "solhint 'contracts/**/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix",
-    "coverage": "npx hardhat coverage"
+    "coverage": "npx hardhat coverage",
+    "withdraw:staging": "npx hardhat run scripts/withdraw.js --network sepolia",
+    "deploy:staging": "npx hardhat deploy --network sepolia"
   },
   "keywords": [],
   "author": "",
