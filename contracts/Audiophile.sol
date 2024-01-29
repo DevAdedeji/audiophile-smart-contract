@@ -45,8 +45,8 @@ contract Audiophile {
         return productBoughtBy[productId];
     }
 
-    function getPriceFeed() public view returns (AggregatorV3Interface) {
-        return s_priceFeed;
+    function getPrice(uint256 amount) public view returns (uint256) {
+        return amount.getConversionRate(s_priceFeed);
     }
 
     function getBalance() public view returns (uint256) {
